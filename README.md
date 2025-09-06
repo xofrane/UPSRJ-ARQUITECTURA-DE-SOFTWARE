@@ -87,6 +87,20 @@ This structure reflects a **layered architecture**, promoting separation of conc
      - Adjust the controller to receive the keyword via query parameter or request body.
      - Ensure the response returns only the matching user or an error message if not found.
 
+5. **Render HTML Templates**
+   - Use Flask's template engine to render:
+     - `search.html` → form for user input
+     - `result.html` → displays user data
+     - `error.html` → shows error messages
+     - Replace JSON responses with HTML views for better user experience.
+
+6. **Simulate a Change Request (CR #2)**
+   - Scenario: The client now wants to allow searching by either ID or keyword.
+   - Tasks:
+     - Update UserRepository and UserService to support both search methods.
+     - Modify the controller to handle both inputs.
+     - Refactor the search.html template to allow switching between ID and keyword input dynamically.
+
 ---
 
 ## 🧠 Reflection Questions
@@ -94,4 +108,7 @@ This structure reflects a **layered architecture**, promoting separation of conc
 - How does modularization improve maintainability?
 - What are the risks of tight coupling in evolving systems?
 - Which components are most sensitive to change, and how can we isolate them?
-
+- How would the second CR (search by ID or keyword) have been more difficult if the service and repository were tightly coupled?
+- What parts of the project are provided by the framework (Flask)?
+- What parts are defined by our architecture?
+- What parts implement design patterns?
