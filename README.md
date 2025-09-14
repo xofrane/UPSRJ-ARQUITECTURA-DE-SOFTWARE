@@ -153,7 +153,7 @@ cd UPSRJ-ARQUITECTURA-DE-SOFTWARE
 
 ### 🛠️ Paso 3: Implementa tu solución sobre la rama develop
 - Trabaja directamente sobre la rama `develop` de tu fork.
-- Sigue las instrucciones en `README.md` y `HOMEWORK.md`.
+- Sigue las instrucciones en `README.md`.
 
 > 💡 **Nota:** Puedes usar herramientas de IA para ayudarte con el diseño de plantillas HTML, sugerencias de layout, estilos, etc.
 
