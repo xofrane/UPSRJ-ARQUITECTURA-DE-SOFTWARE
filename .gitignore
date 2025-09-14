@@ -51,3 +51,5 @@ Thumbs.db
 instance/
 *.db
 *.sqlite3
+
+*.log
