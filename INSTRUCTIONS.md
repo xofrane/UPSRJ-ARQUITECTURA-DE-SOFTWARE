@@ -7,7 +7,7 @@ Welcome to your first assignment in Software Architecture. This guide will help 
 ## 📥 Step 1: Fork the Repository
 
 1. Go to the public repository:  
-   👉 [https://github.com/chucholoport/UPSRJ-ARQUITECTURA-DE-SOFTWARE-ALUMNOS](https://github.com/chucholoport/UPSRJ-ARQUITECTURA-DE-SOFTWARE-ALUMNOS)
+   👉 [https://github.com/chucholoport/UPSRJ-ARQUITECTURA-DE-SOFTWARE](https://github.com/chucholoport/UPSRJ-ARQUITECTURA-DE-SOFTWARE)
 2. Click the **Fork** button in the top-right corner.
 3. This will create a copy of the repository under your GitHub account.
 
@@ -16,43 +16,33 @@ Welcome to your first assignment in Software Architecture. This guide will help 
 ## 💻 Step 2: Clone Your Fork Locally
 
 ```bash
-git clone https://github.com/your-username/UPSRJ-ARQUITECTURA-DE-SOFTWARE-ALUMNOS.git
-cd UPSRJ-ARQUITECTURA-DE-SOFTWARE-ALUMNOS
+git clone https://github.com/your-username/UPSRJ-ARQUITECTURA-DE-SOFTWARE.git
+cd UPSRJ-ARQUITECTURA-DE-SOFTWARE
 ```
 
-## 🧪 Step 3: Create Your Working Branch
-```bash
-git checkout -b week-1-solution
-```
 
-Use a descriptive name like `week-1-solution` or `feature/yourname-week1`
+## 🛠️ Step 3: Implementa tu solución sobre la rama develop
+- Trabaja directamente sobre la rama `develop` de tu fork.
+- Sigue las instrucciones en `README.md` y `HOMEWORK.md`.
 
+> 💡 **Nota:** Puedes usar herramientas de IA para ayudarte con el diseño de plantillas HTML, sugerencias de layout, estilos, etc.
 
-## 🛠️ Step 4: Implement Your Solution
-- Follow the instructions in `README.md` and `HOMEWORK.md`
-
-> 💡 **Note:** You are encouraged to use AI tools freely to assist with HTML template design.
-Whether it's layout suggestions, styling, or dynamic rendering ideas—leverage them to improve clarity and usability.
-
-
-## 📤 Step 5: Commit Your Work
+## 📤 Step 4: Commit y Push
+Guarda tus cambios y súbelos a tu fork:
 ```bash
 git add .
-git commit -m "Week 1 solution: implemented user/group search and templates"
+git commit -m "Solución semana 1: implementación completa"
+git push origin develop
 ```
 
-## 🚀 Step 6: Push Your Branch
-```bash
-git push origin week-1-solution
-```
+## 📮 Step 5: Entrega tu trabajo
+Para la entrega:
+1. Ve a la pestaña **Actions** de tu repositorio en GitHub.
+2. Haz clic en el workflow "Autograde" más reciente que se haya ejecutado sobre tu rama `develop`.
+3. Copia el link de la ejecución (URL en tu navegador).
+4. Comparte ese link en la plataforma classroom, según las instrucciones del profesor.
 
-## 📮 Step 7: Submit via Pull Request
-Once your branch is pushed to your forked repository:
-1. Copy the URL of your solution branch, for example:
-`https://github.com/your-username/UPSRJ-ARQUITECTURA-DE-SOFTWARE-ALUMNOS/tree/week-1-solution`
-2. Send this link to the instructor via the designated channel (email, Teams, classroom platform, etc.)
-
-> 💡 **Note:** Make sure the branch is visible and contains all your committed work before submitting.
+> 💡 **Nota:** Asegúrate de que tu rama develop tenga todos tus cambios antes de copiar el link de autograde.
 
 ## 🧠 Tips
 - Commit often with meaningful messages.
