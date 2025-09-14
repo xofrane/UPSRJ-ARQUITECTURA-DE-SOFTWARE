@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout repositorio
       uses: actions/checkout@v3
+      with:
+        submodules: recursive
 
     - name: Configurar entorno virtual
       uses: actions/setup-python@v4
@@ -26,11 +28,6 @@ jobs:
     - name: Instalar dependencias
       run: |
         pip install -r requirements.txt
-
-    - name: Agregar submodulos
-      run: |  
-        git submodule add https://github.com/chucholoport/py_utils.git py_utils
-        git submodule update --init --recursive
 
     - name: Clonar repositorio de evaluación
       run: git clone https://chucholoport:${{ secrets.AUTOGRADE_PAT }}@github.com/chucholoport/autograde-core.git
