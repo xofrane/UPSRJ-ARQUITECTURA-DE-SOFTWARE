@@ -1,0 +1,36 @@
+name: Autograde
+
+on:
+  push:
+    branches:
+      - develop
+      - 'feature/exercise**'
+  pull_request:
+    branches:
+      - develop
+      - 'feature/exercise**'
+                
+jobs:
+  run-autograde:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repositorio
+      uses: actions/checkout@v3
+
+    - name: Configurar entorno virtual
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Instalar dependencias
+      run: |
+        pip install -r requirements.txt
+
+    - name: Clonar repositorio de evaluación
+      run: git clone https://chucholoport:${{ secrets.AUTOGRADE_PAT }}@github.com/chucholoport/autograde-core.git
+
+    - name: Ejecutar pruebas
+      working-directory: autograde-core
+      run: |
+        pytest ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
