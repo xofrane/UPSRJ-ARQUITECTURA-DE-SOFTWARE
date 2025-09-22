@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Búsqueda de Usuarios</title>
+</head>
+<body>
+    <h1>Buscar Usuarios</h1>
+    <form method="POST" action="/search">
+        <label>Buscar por:</label>
+        <select name="search_type">
+            <option value="id">ID</option>
+            <option value="keyword">Keyword</option>
+        </select>
+        <input type="text" name="query" placeholder="Ingrese su búsqueda" required>
+        <button type="submit">Buscar</button>
+    </form>
+</body>
+</html>
