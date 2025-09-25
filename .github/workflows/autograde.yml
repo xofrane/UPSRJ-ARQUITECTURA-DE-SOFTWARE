@@ -3,6 +3,7 @@ name: Autograde
 on:
   push:
     branches:
+      -main
       - develop
       - 'feature/exercise**'
   pull_request:
