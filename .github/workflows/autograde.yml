@@ -32,4 +32,4 @@ jobs:
 
       - name: Ejecutar pruebas de autograde
         working-directory: autograde-core
-        run: pytest ../ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
+        run: pytest $GITHUB_WORKSPACE/ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
