@@ -6,36 +6,27 @@ on:
       - main
       - develop
       - 'feature/exercise**'
-  # 👇 Elimino pull_request porque ahí NO hay secrets disponibles
-  # pull_request:
-  #   branches:
-  #     - main
-  #     - develop
-  #     - 'feature/exercise**'
                 
 jobs:
   run-autograde:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repositorio
+    - name: Checkout repositorio del alumno
       uses: actions/checkout@v3
-      with:
-        submodules: recursive
 
-    - name: Configurar entorno virtual
+    - name: Configurar Python
       uses: actions/setup-python@v4
       with:
         python-version: '3.11'
 
-    - name: Instalar dependencias
-      run: |
-        pip install -r requirements.txt
+    - name: Instalar dependencias del alumno
+      run: pip install -r requirements.txt
 
     - name: Clonar repositorio de evaluación
-      run: git clone https://xofrane:${{ secrets.AUTOGRADE_PAT }}@github.com/chucholoport/autograde-core.git
-
-    - name: Ejecutar pruebas
-      working-directory: autograde-core
       run: |
-        pytest ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
+        git clone https://xofrane:${{ secrets.AUTOGRADE_PAT }}@github.com/chucholoport/autograde-core.git
+
+    - name: Ejecutar pruebas de autograde
+      working-directory: autograde-core
+      run: pytest ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
