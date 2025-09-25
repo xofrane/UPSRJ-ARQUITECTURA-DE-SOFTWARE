@@ -31,4 +31,7 @@ jobs:
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
       - name: Ejecutar pruebas de autograde
-        run: pytest UPSRJ-ARQUITECTURA-DE-SOFTWARE/exercises/basic_concepts/test_routes.py -v
+        # Si tus tests están en exercises/basic_concepts
+        run: pytest exercises/basic_concepts/test_routes.py -v
+        # Alternativamente, si tienes varios tests, usa:
+        # run: pytest tests -v
