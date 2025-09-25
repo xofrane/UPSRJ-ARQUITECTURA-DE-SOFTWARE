@@ -200,4 +200,5 @@ Para la entrega:
 
 Actualizado: septiembre 2025#   C a m b i o   p a r a   d i s p a r a r   A c t i o n s  
  #   R e - r u n   A c t i o n s   c o n   s e c r e t   A U T O G R A D E _ P A T  
+ #   F o r z a r   w o r k f l o w   c o n   m i   u s u a r i o  
  
