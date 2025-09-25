@@ -31,4 +31,4 @@ jobs:
         run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
       - name: Ejecutar pruebas de autograde
-        run: pytest ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
+        run: pytest UPSRJ-ARQUITECTURA-DE-SOFTWARE/ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
