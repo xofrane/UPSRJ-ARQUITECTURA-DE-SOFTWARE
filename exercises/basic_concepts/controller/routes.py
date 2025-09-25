@@ -5,8 +5,9 @@ import sys
 import os
 from logging import DEBUG, INFO, WARNING
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
-
+root_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..'))
+if root_path not in sys.path:
+    sys.path.insert(0, root_path)
 from py_utils.logger import plog  # Solo plog, sin set_logging
 
 from exercises.basic_concepts.repository.user_repository import UserRepository
