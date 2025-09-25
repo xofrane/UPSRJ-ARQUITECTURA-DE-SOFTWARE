@@ -3,7 +3,7 @@ import sys
 import os
 from logging import DEBUG, INFO, WARNING
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
 
 from py_utils.logger import plog  # Solo plog, sin set_logging
 
