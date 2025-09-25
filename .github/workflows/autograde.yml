@@ -6,27 +6,30 @@ on:
       - main
       - develop
       - 'feature/exercise**'
-                
+
 jobs:
   run-autograde:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repositorio del alumno
-      uses: actions/checkout@v3
+      - name: Checkout repositorio del alumno
+        uses: actions/checkout@v3
 
-    - name: Configurar Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.11'
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
-    - name: Instalar dependencias del alumno
-      run: pip install -r requirements.txt
+      - name: Instalar dependencias del alumno
+        run: pip install -r requirements.txt
 
-    - name: Clonar repositorio de evaluación
-      run: |
-        git clone https://xofrane:${{ secrets.AUTOGRADE_PAT }}@github.com/chucholoport/autograde-core.git
+      - name: Clonar repositorio de evaluación
+        run: |
+          git clone https://xofrane:${{ secrets.AUTOGRADE_PAT }}@github.com/chucholoport/autograde-core.git
 
-    - name: Ejecutar pruebas de autograde
-      working-directory: autograde-core
-      run: pytest ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
+      - name: Configurar PYTHONPATH
+        run: echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
+
+      - name: Ejecutar pruebas de autograde
+        working-directory: autograde-core
+        run: pytest ../ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
