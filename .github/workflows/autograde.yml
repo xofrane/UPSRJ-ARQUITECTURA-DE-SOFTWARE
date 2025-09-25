@@ -8,6 +8,7 @@ on:
       - 'feature/exercise**'
   pull_request:
     branches:
+      -main
       - develop
       - 'feature/exercise**'
                 
