@@ -202,4 +202,5 @@ Actualizado: septiembre 2025#   C a m b i o   p a r a   d i s p a r a r   A c t 
  #   R e - r u n   A c t i o n s   c o n   s e c r e t   A U T O G R A D E _ P A T  
  #   F o r z a r   w o r k f l o w   c o n   m i   u s u a r i o  
  # #   P r o b a r   a u t o g r a d e  
+ # # #   T e s t   a u t o g r a d e   s e c r e t s  
  
