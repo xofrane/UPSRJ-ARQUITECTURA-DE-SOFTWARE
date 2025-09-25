@@ -1,23 +1,23 @@
 from flask import Flask, request, render_template
 import sys
 import os
-from logging import DEBUG, INFO, WARNING, ERROR
+from logging import DEBUG, INFO, WARNING
 
-# Ajuste del path para importar py_utils
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-from py_utils.logger import set_logging, plog
 
-# Importamos repositorio y servicio
+from py_utils.logger import plog  # Solo plog, sin set_logging
+
 from exercises.basic_concepts.repository.user_repository import UserRepository
 from exercises.basic_concepts.service.user_service import EntityService
 
-# Inicialización de Flask
-app = Flask(__name__)
 
-# Inyección de dependencias
+template_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../templates'))
+app = Flask(__name__, template_folder=template_dir)
+
 user_repo = UserRepository()
 entity_service = EntityService(user_repo)
 
+# RUTAS PRINCIPALES
 
 @app.route("/")
 def home():
@@ -26,16 +26,21 @@ def home():
     return render_template("search.html")
 
 
+@app.route("/users")
+def users():
+    """Ruta para listar todos los usuarios desde users.json"""
+    plog("Solicitando lista de usuarios /users", INFO)
+    all_users = entity_service.get_all_entities()
+    return render_template("result.html", result=all_users)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    """
-    Ruta para buscar entidades (usuarios).
-    Permite búsqueda por ID o por keyword.
-    """
+   
     plog("Recibida petición en /search", INFO)
 
     if request.method == "POST":
-        search_type = request.form.get("search_type")  # id o keyword
+        search_type = request.form.get("search_type")  # 'id' o 'keyword'
         query = request.form.get("query")
 
         if search_type == "id":
@@ -59,5 +64,4 @@ def search():
         else:
             return render_template("error.html", message="Tipo de búsqueda no válido.")
 
-    # Si es GET → redirigimos al formulario
     return render_template("search.html")

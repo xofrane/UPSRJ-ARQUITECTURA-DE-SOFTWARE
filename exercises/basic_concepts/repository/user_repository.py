@@ -12,17 +12,15 @@ from py_utils.logger import set_logging, plog
 from exercises.basic_concepts.repository.interfaces import EntityRepository
 
 
+
 class UserRepository(EntityRepository):
-    """
-    Implementación concreta de EntityRepository para Usuarios.
-    Se conecta con un archivo JSON externo (users.json).
-    """
 
     def __init__(self, json_path: str = None):
-        """Permite configurar la ruta del archivo JSON (por defecto usa users.json)"""
+        """Configura la ruta del archivo JSON"""
         self.json_path = json_path or os.path.join(
             os.path.dirname(__file__), "users.json"
         )
+        plog("Inicializando UserRepository", INFO)
 
     def _load_users(self) -> List[Dict]:
         """Carga los usuarios desde el archivo JSON"""
@@ -32,12 +30,12 @@ class UserRepository(EntityRepository):
         return users
 
     def get_all(self) -> List[Dict]:
-        """Devuelve todos los usuarios"""
+        """Implementación obligatoria de EntityRepository"""
         plog("Obteniendo todos los usuarios", INFO)
         return self._load_users()
 
     def get_by_id(self, entity_id: int) -> Optional[Dict]:
-        """Busca un usuario por ID"""
+        """Implementación obligatoria de EntityRepository"""
         plog(f"Buscando usuario con ID={entity_id}", INFO)
         users = self._load_users()
         for user in users:
@@ -46,7 +44,7 @@ class UserRepository(EntityRepository):
         return None
 
     def get_by_keyword(self, keyword: str) -> List[Dict]:
-        """Busca usuarios cuyo nombre contenga el keyword"""
+        """Implementación obligatoria de EntityRepository"""
         plog(f"Buscando usuarios con keyword='{keyword}'", INFO)
         users = self._load_users()
-        return [user for user in users if keyword.lower() in user.get("name", "").lower()]
+        return [u for u in users if keyword.lower() in u.get("name", "").lower()]
