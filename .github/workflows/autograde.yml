@@ -35,4 +35,4 @@ jobs:
     - name: Ejecutar pruebas
       working-directory: autograde-core
       run: |
-        pytest ARQUITECTURA-DE-SOFTWARE/01_basic_concepts/test_app.py
+        pytest ARQUITECTURA-DE-SOFTWARE/basic_concepts/test_app.py
