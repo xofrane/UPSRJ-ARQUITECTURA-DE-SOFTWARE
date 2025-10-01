@@ -30,7 +30,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Clonar repositorio de evaluación
-      run: git clone https://chucholoport:${{ secrets.AUTOGRADE_PAT }}@github.com/chucholoport/autograde-core.git
+      run: git clone https://xofrane:${{ secrets.AUTOGRADE_PAT }}@github.com/chucholoport/autograde-core.git
 
     - name: Ejecutar pruebas
       working-directory: autograde-core

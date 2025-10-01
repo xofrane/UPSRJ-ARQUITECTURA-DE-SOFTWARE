@@ -1,0 +1,5 @@
+[
+  {"id": 1, "name": "Ana Pérez", "email": "ana@example.com", "keyword": "ana"},
+  {"id": 2, "name": "Luis Gómez", "email": "luis@example.com", "keyword": "luis"},
+  {"id": 3, "name": "María López", "email": "maria@example.com", "keyword": "maria"}
+]

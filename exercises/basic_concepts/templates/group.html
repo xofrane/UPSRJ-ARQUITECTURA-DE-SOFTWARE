@@ -1,0 +1,6 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Grupo</title></head><body>
+  <h2>Grupo: {{group.name}}</h2>
+  <h3>Miembros</h3>
+  <ul>{% for m in members %}<li>{{m.name}} - {{m.email}}</li>{% else %}<li>No hay miembros</li>{% endfor %}</ul>
+  <a href="/">Volver</a>
+</body></html>

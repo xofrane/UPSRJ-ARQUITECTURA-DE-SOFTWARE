@@ -59,3 +59,7 @@ if __name__ == "__main__":
     # Entry point: runs the Flask development server in debug mode.
     plog("Starting Flask app", INFO)
     app.run(debug=True)
+
+@app.route("/")
+def home():
+    return "<h1>Bienvenido a mi API de usuarios</h1><p>Visita /users para ver la lista.</p>"
